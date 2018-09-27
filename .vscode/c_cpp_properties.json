@@ -3,7 +3,12 @@
         {
             "name": "Mac",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/",
+                "${workspaceFolder}/opencv2.framework",
+                "${workspaceFolder}/opencv2.framework/Headers",
+                "${workspaceFolder}/opencv2.framework/opencv2",
+                "${workspaceFolder}/opencv2"
             ],
             "defines": [],
             "macFrameworkPath": [
