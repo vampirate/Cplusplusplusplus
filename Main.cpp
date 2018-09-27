@@ -1,23 +1,26 @@
+#include <opencv2/core.hpp>
+#include <opencv2/imgcodecs.hpp>
+#include <opencv2/highgui.hpp>
 #include <iostream>
 #include <string>
-
-int max(int one, int two);
-
-int main(int argc, char **argv) {
-  int one = 14;
-  int two = 2323;
-
-  int three = max(one, two);
-  std::cout << three;
-  return 0;
-}
-
-int max (int one, int two) {
-  int result;
-
-  if (one > two)
-    result = one;
-  else
-    result = two;
-  return result;
+using namespace cv;
+using namespace std;
+int main( int argc, char** argv )
+{
+    String imageName( "cat.jpg" ); // by default
+    if( argc > 1)
+    {
+        imageName = argv[1];
+    }
+    Mat image;
+    image = imread( imageName, IMREAD_COLOR ); // Read the file
+    if( image.empty() )                      // Check for invalid input
+    {
+        cout <<  "Could not open or find the image" << std::endl ;
+        return -1;
+    }
+    namedWindow( "Display window", WINDOW_AUTOSIZE ); // Create a window for display.
+    imshow( "Display window", image );                // Show our image inside it.
+    waitKey(0); // Wait for a keystroke in the window
+    return 0;
 }
