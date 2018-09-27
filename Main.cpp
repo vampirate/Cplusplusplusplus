@@ -1,11 +1,23 @@
 #include <iostream>
+#include <string>
 
-int main() {
-  std::cout << "Hello World!" << std::endl;
-  std::cout << "Weow" << std::endl;
-  int count;
-  count = 0;
-  for (count = 0; count < 10; count++) {
-    std::cout << "Weow" << std::endl;
-  }
+int max(int one, int two);
+
+int main(int argc, char **argv) {
+  int one = 14;
+  int two = 2323;
+
+  int three = max(one, two);
+  std::cout << three;
+  return 0;
+}
+
+int max (int one, int two) {
+  int result;
+
+  if (one > two)
+    result = one;
+  else
+    result = two;
+  return result;
 }
